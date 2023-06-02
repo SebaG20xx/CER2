@@ -1,0 +1,17 @@
+{% extends 'comunicados/base.html' %}
+
+{% block title %}Lista de Comunicados{% endblock %}
+
+{% block content %}
+    <h1>Lista de Comunicados</h1>
+    <ul class="list-group">
+        {% for comunicado in comunicados %}
+            <li class="list-group-item">
+                <h3>{{ comunicado.titulo }}</h3>
+                <p>{{ comunicado.detalle }}</p>
+            </li>
+        {% empty %}
+            <li class="list-group-item">No hay comunicados disponibles.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
